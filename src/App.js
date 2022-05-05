@@ -41,15 +41,14 @@ function App() {
         <h1>Find a Recipe</h1>
       </div>
 
-      <div className="container">
+      <div className="container ">
         <form onSubmit={finalSearch}>
-          <input className="search" placeholder="Search..." value={inputSearch}  onChange={myRecipeSearch}>
+          <input className="inputField" placeholder="Search..." value={inputSearch}  onChange={myRecipeSearch}>
           </input>
         </form>
         <button onClick={finalSearch}>
           <img src="https://img.icons8.com/fluency/48/000000/fry.png" width="35px" className="icons" alt="pic"/>
         </button>
-        
       </div>
 
       <div className="recipes">
