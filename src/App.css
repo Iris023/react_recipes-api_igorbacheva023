@@ -49,9 +49,10 @@ form {
   line-height: 18px;
   color: #575756;
   background-color: #f7f6f696;
-  margin-left: 0px;
+  margin-left: 0;
   border: 1px solid #191919;
-  border-right: none;
+  /* border-right: none; */
+  border-radius: 0%;
 }
 
 .inputField:focus {
@@ -59,7 +60,6 @@ form {
 }
 
 .searchBtn {
-  margin-right: 0;
   padding: 0;
   border: 1px solid #191919;
   height: 51px;
