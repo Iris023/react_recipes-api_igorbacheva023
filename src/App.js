@@ -24,6 +24,7 @@ function App() {
 
   const myRecipeSearch = (e) => {
     setInputSearch(e.target.value);
+    
   }
 
   const finalSearch = (e) => {
@@ -45,10 +46,11 @@ function App() {
         <form onSubmit={finalSearch}>
           <input className="inputField" placeholder="Search..." value={inputSearch}  onChange={myRecipeSearch}>
           </input>
-        </form>
-        <button onClick={finalSearch}>
-          <img src="https://img.icons8.com/fluency/48/000000/fry.png" width="35px" className="icons" alt="pic"/>
+          
+        <button onClick={finalSearch} className="searchBtn">
+          <img src="https://img.icons8.com/fluency/48/000000/fry.png" className="searchIcon" alt="pic"/>
         </button>
+        </form>
       </div>
 
       <div className="recipes">
