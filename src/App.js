@@ -9,7 +9,7 @@ function App() {
 
   const [inputSearch, setInputSearch] = useState("");
   const [recipesList, setRecipesList] = useState([]);
-  const [chosenIngredient, setChosenIngredient] = useState("avocado");
+  const [chosenIngredient, setChosenIngredient] = useState("salmon");
 
   useEffect(() => {
     getRecipes(); 
@@ -18,19 +18,19 @@ function App() {
   const getRecipes = async() => {
     const response = await fetch(`https://api.edamam.com/search?q=${chosenIngredient}&app_id=${MY_ID}&app_key=${MY_KEY}`);
     const data = await response.json();
-    setRecipesList(data.hits);
     console.log(data);
+    data.hits.length === 0 ? alert('Sorry! No recipe has been found. Try again!') : setRecipesList(data.hits);
   }
 
   const myRecipeSearch = (e) => {
     setInputSearch(e.target.value);
-    
   }
 
   const finalSearch = (e) => {
     e.preventDefault();
     setChosenIngredient(inputSearch);
   }
+
 
   return (
     <div className="App">
@@ -44,7 +44,7 @@ function App() {
 
       <div className="container ">
         <form onSubmit={finalSearch}>
-          <input className="inputField" placeholder="Search..." value={inputSearch}  onChange={myRecipeSearch}>
+          <input className="inputField" placeholder="Search..." type="text" value={inputSearch}  onChange={myRecipeSearch}>
           </input>
           
         <button onClick={finalSearch} className="searchBtn">
@@ -61,6 +61,7 @@ function App() {
             key={id}
             ingredients={element.recipe.ingredientLines}
             weight={element.recipe.totalWeight}
+            servings={element.recipe.yield}
             link= {element.recipe.shareAs}/>
         ))}
       </div>

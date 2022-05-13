@@ -49,14 +49,13 @@ form {
   line-height: 18px;
   color: #575756;
   background-color: #f7f6f696;
-  margin: 0;
-  border-left: none;
   border: 1px solid #191919;
   border-radius: 0%;
 }
 
 .inputField:focus {
   background-color: #d2d2d296;
+  color: #2f2f2f;
 }
 
 .searchBtn {
@@ -64,6 +63,8 @@ form {
   border: 1px solid #191919;
   height: 51px;
   opacity: 0.8;
+  margin: 0;
+  border-left: none;
 }
 
 .searchIcon {
